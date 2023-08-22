@@ -41,11 +41,11 @@ def apply_filter(frame):
     
     # Apply dilation
     dilation_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (dilation_kernel_value, dilation_kernel_value))
-    dilated = cv2.dilate(blurred, dilation_kernel, iterations=1)
+    dilated = cv2.dilate(blurred, dilation_kernel, iterations=3)
     
     # Apply erosion
     erosion_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (erosion_kernel_value, erosion_kernel_value))
-    eroded = cv2.erode(dilated, erosion_kernel, iterations=1)
+    eroded = cv2.erode(dilated, erosion_kernel, iterations=3)
     
     # Apply opening
     opening_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (opening_kernel_value, opening_kernel_value))
